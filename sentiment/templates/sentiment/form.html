@@ -12,6 +12,7 @@
         {% csrf_token %}
         <textarea name="text" rows="10" cols="80" placeholder="Enter text here..."></textarea><br>
         <button type="submit">Analyze Sentiment</button>
+        <a href="{% url 'logout' %}" class="btn btn-primary">Logout</a>
     </form>
 </body>
 </html>

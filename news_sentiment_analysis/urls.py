@@ -1,5 +1,5 @@
 """
-URL configuration for news_sentiment_analysis project.
+URL configuration for the news_sentiment_analysis project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.0/topics/http/urls/
@@ -16,8 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-
+from sentiment import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('sentiment/', include('sentiment.urls')),
+    path('', views.SignupPage, name='signup'),
+     path('login/', views.LoginPage, name='login'),
+     path('logout/', views.LogoutPage, name='logout'),
+     
 ]
+
