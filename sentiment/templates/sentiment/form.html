@@ -1,5 +1,5 @@
-
-<!DOCTYPE html>
+{% extends 'sentiment\base.html' %}
+{% comment %} <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -15,4 +15,16 @@
         <a href="{% url 'logout' %}" class="btn btn-primary">Logout</a>
     </form>
 </body>
-</html>
+</html> {% endcomment %}
+{% comment %} {% extends 'base.html' %} {% endcomment %}
+
+{% block title %}Sentiment Analysis Form{% endblock %}
+
+{% block content %}
+<h1>Sentiment Analysis</h1>
+<form method="post" action="{% url 'sentiment_view' %}">
+    {% csrf_token %}
+    <textarea name="text" rows="10" cols="80" placeholder="Enter text here..."></textarea><br>
+    <button type="submit">Analyze Sentiment</button>
+</form>
+{% endblock %}

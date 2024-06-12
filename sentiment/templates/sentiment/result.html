@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+{% extends 'sentiment\base.html' %}
+{% comment %} <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,4 +12,14 @@
     <p>Sentiment: {{ sentiment }}</p>
     <a href="{% url 'sentiment_view' %}">Analyze another text</a>
 </body>
-</html>
+</html> {% endcomment %}
+
+
+{% block title %}Sentiment Analysis Result{% endblock %}
+
+{% block content %}
+<h1>Sentiment Analysis Result</h1>
+<p>The sentiment of the text is: {{ sentiment }}</p>
+<p>Original text: {{ text }}</p>
+<a href="{% url 'sentiment_view' %}" class="btn btn-primary">Analyze Another</a>
+{% endblock %}
