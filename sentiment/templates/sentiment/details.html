@@ -1,11 +1,71 @@
-{% extends 'sentiment\base.html' %}
+{% extends 'sentiment/base.html' %}
 
 {% block title %}History Details{% endblock %}
 
 {% block content %}
-<h1>History Details</h1>
-<p><strong>Text:</strong> {{ history.text }}</p>
-<p><strong>Sentiment:</strong> {{ history.sentiment }}</p>
-<p><strong>Created At:</strong> {{ history.created_at }}</p>
-<a href="{% url 'sentiment_view' %}" class="btn btn-primary">Back to Home</a>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-size: cover;
+        background-image: url('../pawel-czerwinski-BPrk2cOoCq8-unsplash.jpg');
+    }
+
+    .container {
+        background-color: #ffffff;
+        border-radius: 10px;
+        backdrop-filter: blur(5px);
+        border: 2px solid rgba(255, 255, 255, 0.986);
+        box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+        background-color: rgba(141, 193, 216, 0.13);
+        /* background-image: url('../pawel-czerwinski-BPrk2cOoCq8-unsplash.jpg'); */
+        background-size: cover;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(145, 139, 139, 0.1);
+        text-align: center;
+        width: 100vw;
+        max-width: 70vw;
+        min-height: 70vh;
+    }
+
+    h1 {
+        color: #fff;
+        margin-bottom: 20px;
+    }
+
+    p {
+        color: #fff;
+        font-size: 18px;
+        margin: 10px 0;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 16px;
+        display: inline-block;
+        margin-top: 20px;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+</style>
+
+<div class="container">
+    <h1>History Details</h1>
+    <p><strong>Text:</strong> {{ history.text }}</p>
+    <p><strong>Sentiment:</strong> {{ history.sentiment }}</p>
+    <p><strong>Created At:</strong> {{ history.created_at }}</p>
+    <a href="{% url 'sentiment_view' %}" class="btn btn-primary">Back to Home</a>
+</div>
 {% endblock %}
