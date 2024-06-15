@@ -1,0 +1,11 @@
+{% extends 'sentiment\base.html' %}
+
+{% block title %}History Details{% endblock %}
+
+{% block content %}
+<h1>History Details</h1>
+<p><strong>Text:</strong> {{ history.text }}</p>
+<p><strong>Sentiment:</strong> {{ history.sentiment }}</p>
+<p><strong>Created At:</strong> {{ history.created_at }}</p>
+<a href="{% url 'sentiment_view' %}" class="btn btn-primary">Back to Home</a>
+{% endblock %}
