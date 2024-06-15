@@ -1,0 +1,6 @@
+django
+torch
+transformers
+nltk
+pandas
+numpy
