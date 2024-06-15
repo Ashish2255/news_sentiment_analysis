@@ -1,14 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sentiment Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #112738;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-size: cover;
+            background-image: url('../pawel-czerwinski-BPrk2cOoCq8-unsplash.jpg');
+            background-size: cover;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            border: 2px solid rgba(255, 255, 255, 0.986);
+            box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+            background-color: rgba(141, 193, 216, 0.13);
+            /* background-image: url('../pawel-czerwinski-BPrk2cOoCq8-unsplash.jpg'); */
+            background-size: cover;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(145, 139, 139, 0.1);
+            text-align: center;
+            width: 100vw;
+            max-width: 70vw;
+            min-height: 70vh;
+        }
+
+        h1 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        a {
+            display: inline-block;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+
+        a:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Sentiment Analysis Result</h1>
-    <p>Text: {{ text }}</p>
-    <p>Sentiment: {{ sentiment }}</p>
-    <a href="{% url 'sentiment_view' %}">Analyze another text</a>
+    <div class="container">
+        <h1>Sentiment Analysis Result</h1>
+        <p><strong>Text:</strong> {{ text }}</p>
+        <p><strong>Sentiment:</strong> {{ sentiment }}</p>
+        <a href="{% url 'sentiment_view' %}">Analyze another text</a>
+    </div>
 </body>
+
 </html>
